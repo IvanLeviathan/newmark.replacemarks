@@ -50,6 +50,10 @@ class Main{
         return $optionsArr;
     }
 
+    /**
+     * @param string $content
+     * @return bool
+     */
     public static function replaceActions(&$content = ''){
         if(!$content || defined("ADMIN_SECTION"))
             return false;
@@ -65,12 +69,23 @@ class Main{
 
         return false;
     }
+
+    /**
+     * @param $value
+     * @return mixed
+     */
     private static function getValue($value){
         if(array_key_exists($value['value'], self::$defaultMarks))
             return self::$defaultMarks[$value['value']];
         else
             return $value['value'];
     }
+
+    /**
+     * @param $value
+     * @param $state
+     * @return string
+     */
     private static function stateCheck($value, $state){
         switch ($state){
             case 'lower':
@@ -82,6 +97,11 @@ class Main{
         }
         return $value;
     }
+
+    /**
+     * @param $marks
+     * @return array
+     */
     private static function getReplacesArray($marks){
         $arr = array();
         foreach ($marks as $mark => $value) {
@@ -91,9 +111,19 @@ class Main{
         }
         return $arr;
     }
+
+    /**
+     *
+     */
     private static function fillDefaultMarks(){
         self::$defaultMarks = Wordbook::getValuesArr();
     }
+
+    /**
+     * @param $content
+     * @param $options
+     * @return bool
+     */
     private static function replace(&$content, $options){
         $marks = json_decode($options['marks'], true);
         if(!is_array($marks))
