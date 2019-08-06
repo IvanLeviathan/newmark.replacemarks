@@ -7,10 +7,10 @@
 3. В админке идем **Markeplace - Установленные решения** и устанавливаем модуль
 
 
-![Шаг 1](/readme_images/replacemarks1.png)
+![Шаг 1](/readme/replacemarks1.png)
 
 ### Этап 2 - Настройка модуля ###
 
 В админке идем **Настройки - Настройки модулей - Подмена меток NewMark**
 
-![Шаг 2](/readme_images/replacemarks2.png)
+![Шаг 2](/readme/replacemarks2.png)
